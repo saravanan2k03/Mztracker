@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:mztrackertodo/MainPage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mztrackertodo/functions/variabels.dart';
 import '../api/google_signin_api.dart';

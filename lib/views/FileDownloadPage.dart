@@ -24,7 +24,6 @@ class _FileDowloadPageState extends State<FileDowloadPage> {
     color: MainTextColor,
   );
   List<dynamic> data = [];
-  late Timer _timer;
   bool noatc = false;
   final StreamController _streamController = StreamController();
   bool checking = true;
@@ -100,7 +99,6 @@ class _FileDowloadPageState extends State<FileDowloadPage> {
 
   @override
   void initState() {
-    _timer = Timer.periodic(const Duration(seconds: 3), (timer) => getdata());
     super.initState();
   }
 

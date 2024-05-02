@@ -10,7 +10,6 @@ class appbar extends StatelessWidget {
 
   @override
   Widget build(cont) {
-    var hei = MediaQuery.of(cont).size.height;
     var wid = MediaQuery.of(cont).size.width;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
