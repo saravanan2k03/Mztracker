@@ -21,6 +21,7 @@ void main() async {
   runApp(MyApp());
   FileOperationdart.versionchecking(version);
   signinchecking();
+  requestPermission();
 }
 
 // ignore: non_constant_identifier_names
@@ -103,7 +104,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: Future.delayed(Duration(seconds: 10)),
+      future: Future.delayed(Duration(seconds: 5)),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           return Scaffold();

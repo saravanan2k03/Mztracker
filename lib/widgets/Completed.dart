@@ -41,6 +41,11 @@ class _CompletedPageState extends State<CompletedPage> {
           setState(() {
             completedList = json.decode(response.body);
             _CompletedController.add(completedList);
+            if (kDebugMode) {
+              print("enter");
+            }
+
+            print(completedList);
             if (completedList.isEmpty) {
               Completednotask = false;
             }
@@ -156,7 +161,7 @@ class _CompletedPageState extends State<CompletedPage> {
                         itemBuilder: (context, index) {
                           var data = completedList[index];
                           if (kDebugMode) {
-                            print(data);
+                            print("CompletedTask:" + data);
                           }
                           return StatusContainer(
                             tittle: completedList[index]["Task_Tittle"]
