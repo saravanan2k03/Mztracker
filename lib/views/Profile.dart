@@ -98,7 +98,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     const SizedBox(height: 5),
                     Center(
                       child: Text(
-                        "Saravanan",
+                        box.read("Name").toString(),
                         style: GoogleFonts.poppins(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
