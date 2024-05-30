@@ -14,28 +14,28 @@ Here are some screenshots of the application:
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center;">
   <div style="flex: 1 1 150px; max-width: 150px; margin: 5px;">
-    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/0cf9e8de-385b-4220-9ba6-9087037220ce" alt="Screenshot 1" style="width: 100%; height: auto;">
+    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/0cf9e8de-385b-4220-9ba6-9087037220ce" alt="Screenshot 1" style="width:25%; height: auto;">
   </div>
   <div style="flex: 1 1 150px; max-width: 150px; margin: 5px;">
-    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/49d6a4f0-a6eb-4d11-96b1-87f617d0b3d8" alt="Screenshot 2" style="width: 100%; height: auto;">
+    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/49d6a4f0-a6eb-4d11-96b1-87f617d0b3d8" alt="Screenshot 2" style="width:25%; height: auto;">
   </div>
   <div style="flex: 1 1 150px; min-width:150px max-width: 150px; margin: 5px;">
-    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/ac0da5d9-fd47-4321-8cc4-ba579747cebf" alt="Screenshot 3" style="width: 100%; height: auto;">
+    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/ac0da5d9-fd47-4321-8cc4-ba579747cebf" alt="Screenshot 3" style="width:25%; height: auto;">
   </div>
   <div style="flex: 1 1 150px; max-width: 100px; margin: 5px;">
-    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/14d5f9eb-712c-4f21-a3f9-7208c3200fe7" alt="Screenshot 4" style="width: 100%; height: auto;">
+    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/14d5f9eb-712c-4f21-a3f9-7208c3200fe7" alt="Screenshot 4" style="width:25%; height: auto;">
   </div>
   <div style="flex: 1 1 150px; max-width: 150px; margin: 5px;">
-    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/0db1d91b-6e33-4682-8b57-57d91442152a" alt="Screenshot 5" style="width: 100%; height: auto;">
+    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/0db1d91b-6e33-4682-8b57-57d91442152a" alt="Screenshot 5" style="width:25%; height: auto;">
   </div>
   <div style="flex: 1 1 150px; max-width: 150px; margin: 5px;">
-    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/81dbe233-66a4-4b65-a792-bd715d1bc8d6" alt="Screenshot 6" style="width: 100%; height: auto;">
+    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/81dbe233-66a4-4b65-a792-bd715d1bc8d6" alt="Screenshot 6" style="width:25%; height: auto;">
   </div>
   <div style="flex: 1 1 150px; max-width: 150px; margin: 5px;">
-    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/d0f7d396-fa60-4868-b4d3-c44a243d5d68" alt="Screenshot 7" style="width: 100%; height: auto;">
+    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/d0f7d396-fa60-4868-b4d3-c44a243d5d68" alt="Screenshot 7" style="width:25%; height: auto;">
   </div>
   <div style="flex: 1 1 150px; max-width: 150px; margin: 5px;">
-    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/4411e9d2-9f25-4777-83c6-e8b18a4b97b6" alt="Screenshot 8" style="width: 100%; height: auto;">
+    <img src="https://github.com/saravanan2k03/Mztracker/assets/112747138/4411e9d2-9f25-4777-83c6-e8b18a4b97b6" alt="Screenshot 8" style="width:25%; height: auto;">
   </div>
 </div>
 
