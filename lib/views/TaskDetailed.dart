@@ -516,9 +516,9 @@ class _TaskDetailedState extends State<TaskDetailed> {
                         height: hei * 0.07,
                         width: wid,
                         child: DottedBorder(
-                          color: Colors.blueGrey,
-                          radius: const Radius.circular(10),
-                          borderType: BorderType.RRect,
+                          // color: Colors.blueGrey,
+                          // radius: const Radius.circular(10),
+                          // borderType: BorderType.RRect,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [

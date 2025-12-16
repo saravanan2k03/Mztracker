@@ -9,9 +9,9 @@ import 'document_container.dart';
 attachments(hei, wid) {
   return StatefulBuilder(builder: (BuildContext context, StateSetter set) {
     return DottedBorder(
-        color: Colors.blueGrey,
-        radius: const Radius.circular(10),
-        borderType: BorderType.RRect,
+        // color: Colors.blueGrey,
+        // radius: const Radius.circular(10),
+        // borderType: BorderType.RRect,
         child: Container(
             constraints: BoxConstraints(maxHeight: double.infinity),
             width: wid,

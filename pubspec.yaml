@@ -41,17 +41,17 @@ dependencies:
   google_fonts: null
   google_sign_in: null
   http: null
-  image_picker: ^0.8.7
+  image_picker: ^1.2.1
   intl: null
   lottie: null
-  onesignal_flutter: ^3.5.1
+  onesignal_flutter: ^5.3.4
   open_file: ^3.2.1
   path_provider: null
   percent_indicator: null
   permission_handler: null
 
 dev_dependencies:
-  flutter_lints: ^2.0.0
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
 

@@ -56,21 +56,21 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future signIn() async {
-    GoogleSignInApi.logout();
-    final user = await GoogleSignInApi.login();
-    if (user == null) {
-      if (kDebugMode) {
-        print("Failed To Sign");
-      }
-    } else {
-      if (kDebugMode) {
-        print("user.email${user.email}");
-      }
+    // GoogleSignInApi.logout();
+    // final user = await GoogleSignInApi.login();
+    // if (user == null) {
+    //   if (kDebugMode) {
+    //     print("Failed To Sign");
+    //   }
+    // } else {
+    //   if (kDebugMode) {
+    //     print("user.email${user.email}");
+    //   }
 
-      box.write("Name", user.displayName!);
-      // ignore: use_build_context_synchronously
-      GoogleSignInApi.GetInitialData(user.email, context);
-      // ignore: use_build_context_synchronously
-    }
+    //   box.write("Name", user.displayName!);
+    //   // ignore: use_build_context_synchronously
+    //   GoogleSignInApi.GetInitialData(user.email, context);
+    //   // ignore: use_build_context_synchronously
+    // }
   }
 }

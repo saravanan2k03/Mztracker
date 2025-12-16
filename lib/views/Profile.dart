@@ -18,7 +18,7 @@ class _ProfilePageState extends State<ProfilePage> {
   bool light = true;
   bool light2 = true;
   bool light3 = true;
-  static final _googleSignIn = GoogleSignIn();
+  // static final _googleSignIn = GoogleSignIn();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -36,7 +36,7 @@ class _ProfilePageState extends State<ProfilePage> {
               padding: const EdgeInsets.only(right: 10),
               child: InkWell(
                 onTap: () async {
-                  await _googleSignIn.signOut();
+                  // await _googleSignIn.signOut();
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const LoginPage()),
                   );
@@ -77,7 +77,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         AvatarGlow(
-                          endRadius: 70,
+                          // endRadius: 70,
                           glowColor: Colors.black,
                           duration: const Duration(seconds: 2),
                           child: Container(

@@ -65,38 +65,38 @@ Future<String> getExternalStorageDirectoryPath() async {
 }
 
 signinchecking() async {
-  GoogleSignIn _googleSignIn = GoogleSignIn();
-  await _googleSignIn.isSignedIn().then((value) {
-    if (value) {
-      Loginsucess = true;
-      initPlatform();
-      getExternalStorageDirectoryPath();
-      requestPermission();
-      if (kDebugMode) {
-        print("Google Has been Signed $Loginsucess");
-      }
-    } else {
-      Loginsucess = false;
-    }
-  });
+  // GoogleSignIn _googleSignIn = GoogleSignIn();
+  // await _googleSignIn.isSignedIn().then((value) {
+  //   if (value) {
+  //     Loginsucess = true;
+  //     initPlatform();
+  //     getExternalStorageDirectoryPath();
+  //     requestPermission();
+  //     if (kDebugMode) {
+  //       print("Google Has been Signed $Loginsucess");
+  //     }
+  //   } else {
+  //     Loginsucess = false;
+  //   }
+  // });
 }
 
-Future<void> initPlatform() async {
-  OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
-  await OneSignal.shared.setAppId("3cfaaad6-e32a-461f-9eba-587e52f2eda1");
-  OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
-    if (kDebugMode) {
-      print("Accepted permission: $accepted");
-    }
-  });
+// Future<void> initPlatform() async {
+//   OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
+//   await OneSignal.shared.setAppId("3cfaaad6-e32a-461f-9eba-587e52f2eda1");
+//   OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
+//     if (kDebugMode) {
+//       print("Accepted permission: $accepted");
+//     }
+//   });
 
-  await OneSignal.shared.getDeviceState().then((value) {
-    if (kDebugMode) {
-      print("onesignalvalue:${value!.userId}");
-    }
-    UploadNotificationId(value!.userId!);
-  });
-}
+//   await OneSignal.shared.getDeviceState().then((value) {
+//     if (kDebugMode) {
+//       print("onesignalvalue:${value!.userId}");
+//     }
+//     UploadNotificationId(value!.userId!);
+//   });
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

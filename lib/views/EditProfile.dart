@@ -106,7 +106,7 @@ class _EditProfileState extends State<EditProfile> {
                       show(context);
                     },
                     child: AvatarGlow(
-                      endRadius: 70,
+                      // endRadius: 70,
                       glowColor: Colors.black,
                       duration: const Duration(seconds: 2),
                       child: Container(

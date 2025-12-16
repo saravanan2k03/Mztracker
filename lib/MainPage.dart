@@ -258,7 +258,7 @@ class _MainPageState extends State<MainPage> {
   }
 
   Future signout() async {
-    await GoogleSignInApi.logout();
+    // await GoogleSignInApi.logout();
 
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (context) => LoginPage()),
