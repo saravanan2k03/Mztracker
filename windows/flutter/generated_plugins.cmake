@@ -3,7 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  permission_handler_windows
+  file_selector_windows
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

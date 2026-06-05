@@ -1,7 +1,7 @@
-// ignore_for_file: unused_field, non_constant_identifier_names, prefer_typing_uninitialized_variables
+// ignore_for_file: non_constant_identifier_names
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mztrackertodo/functions/variabels.dart';
+import 'package:mztrackertodo/constant/app_theme.dart';
 import 'package:mztrackertodo/widgets/Completed.dart';
 import 'package:mztrackertodo/widgets/DoneLate.dart';
 import 'package:mztrackertodo/widgets/PendingTask.dart';
@@ -14,128 +14,83 @@ class TaskStatus extends StatefulWidget {
 }
 
 class _TaskStatusState extends State<TaskStatus> {
-  int _currentIndex = 0;
   bool search = false;
-  var val;
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
+
     return DefaultTabController(
       length: 3,
       child: SafeArea(
         child: Scaffold(
+          backgroundColor: colors.background,
           appBar: AppBar(
             elevation: 0,
-            backgroundColor: Colors.white,
-            title: Text("My all task list",
+            backgroundColor: colors.surface,
+            title: Text('My all task list',
                 style: GoogleFonts.poppins(
                     fontWeight: FontWeight.bold,
                     fontSize: 21,
-                    color: blackclr)),
+                    color: colors.text)),
             centerTitle: true,
             leading: IconButton(
-              icon: const Icon(
-                Icons.chevron_left,
-                color: Colors.black,
-                size: 35,
-              ),
-              // the method which is called
-              // when button is pressed
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              icon: Icon(Icons.chevron_left, color: colors.text, size: 35),
+              onPressed: () => Navigator.pop(context),
             ),
             actions: [
               IconButton(
-                onPressed: () => {
-                  setState(() {
-                    search = !search;
-                  })
-                },
-                icon: const Icon(
-                  Icons.search,
-                  size: 25,
-                  color: Colors.black,
-                ),
+                onPressed: () => setState(() => search = !search),
+                icon: Icon(Icons.search, size: 25, color: colors.text),
               )
             ],
           ),
-          backgroundColor: Colors.white,
           body: Column(
             children: [
-              Visibility(
-                visible: search,
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 30,
-                  child: Stack(
-                    children: [
-                      SizedBox(
-                        width: 400,
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 20, right: 15, left: 15),
-                          child: TextField(
-                            cursorColor: blackclr,
-                            decoration: InputDecoration(
-                              suffixIcon: InkWell(
-                                onTap: () {},
-                                // ignore: prefer_const_constructors
-                                child: Icon(
-                                  Icons.search_sharp,
-                                  size: 20,
-                                  color: blackclr,
-                                ),
-                              ),
-                              hintText: 'Searched task',
-                              hintStyle: GoogleFonts.poppins(fontSize: 12),
-                              contentPadding: const EdgeInsets.all(15),
-                              border: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: blackclr, width: 32.0),
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide(
-                                  color: blackclr,
-                                ),
-                              ),
-                            ),
-                            onChanged: (value) {
-                              // do something
-                            },
-                          ),
-                        ),
+              // Search bar
+              AnimatedCrossFade(
+                duration: const Duration(milliseconds: 200),
+                firstChild: const SizedBox.shrink(),
+                secondChild: Padding(
+                  padding:
+                      const EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 5),
+                  child: TextField(
+                    cursorColor: colors.text,
+                    style: TextStyle(color: colors.text),
+                    decoration: InputDecoration(
+                      suffixIcon:
+                          Icon(Icons.search_sharp, size: 20, color: colors.text),
+                      hintText: 'Search task',
+                      hintStyle:
+                          GoogleFonts.poppins(fontSize: 12, color: colors.textMuted),
+                      filled: true,
+                      fillColor: colors.surface,
+                      contentPadding: const EdgeInsets.all(15),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: colors.inputBorder),
+                        borderRadius: BorderRadius.circular(30),
                       ),
-                    ],
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(color: colors.inputBorder),
+                      ),
+                    ),
                   ),
                 ),
+                crossFadeState:
+                    search ? CrossFadeState.showSecond : CrossFadeState.showFirst,
               ),
+              // Tab bar
               TabBar(
-                onTap: (index) {
-                  setState(() {
-                    _currentIndex = index;
-                  });
-                },
-                labelColor: MainTextColor,
-                unselectedLabelColor: blackclr,
+                labelColor: colors.primary,
+                unselectedLabelColor: colors.textMuted,
                 indicatorSize: TabBarIndicatorSize.label,
                 indicatorWeight: 3,
-                indicatorColor: MainTextColor,
+                indicatorColor: colors.primary,
                 tabs: const [
-                  Tab(
-                    text: "Pending Task",
-                    icon: Icon(Icons.run_circle, color: Colors.black),
-                  ),
-                  Tab(
-                    text: "Done Late",
-                    icon: Icon(Icons.pending_actions_rounded,
-                        color: Colors.black),
-                  ),
-                  Tab(
-                    text: "Completed",
-                    icon: Icon(Icons.done, color: Colors.black),
-                  ),
+                  Tab(text: 'Pending Task', icon: Icon(Icons.run_circle)),
+                  Tab(text: 'Done Late', icon: Icon(Icons.pending_actions_rounded)),
+                  Tab(text: 'Completed', icon: Icon(Icons.done)),
                 ],
               ),
               const Expanded(
@@ -144,12 +99,9 @@ class _TaskStatusState extends State<TaskStatus> {
                   child: TabBarView(
                     physics: BouncingScrollPhysics(),
                     children: [
-                      ////////////
                       PendingTask(),
-                      //////////////////////
                       DoneLate(),
-                      /////////////////
-                      CompletedPage()
+                      CompletedPage(),
                     ],
                   ),
                 ),

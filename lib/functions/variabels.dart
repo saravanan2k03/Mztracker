@@ -1,53 +1,53 @@
-import 'dart:convert';
 import 'dart:io';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:intl/intl.dart';
 
-Color MainTextColor = const Color.fromARGB(255, 255, 73, 60);
-Color Appbackgroundcolor = const Color.fromARGB(252, 255, 250, 250);
-Color blackclr = Colors.black;
+// Global theme notifier — toggled from Profile settings
+final themeNotifier = ValueNotifier<ThemeMode>(ThemeMode.light);
+
+// Legacy colour aliases kept for non-widget code (EasyLoading, etc.)
+const Color MainTextColor    = Color(0xFFFF4940);
+const Color Appbackgroundcolor = Color(0xFFFFFAFA);
+const Color blackclr         = Color(0xFF1A1A1A);
+const Color primary          = Color(0xFFFF4940);
 
 bool? status1 = true;
 bool? status2 = false;
 bool? date_time_status = true;
 bool chat_status = false;
 
-Color primary = Color.fromARGB(255, 255, 73, 60);
 var actual_text;
 List userList = [];
 List<File> file = [];
 List<File> files = [];
 List<dynamic> categoryList = [];
 List<Map<String, dynamic>> selectedItems = [];
-List<String> cat_list = ["- - Choose-Category - -"];
+List<String> cat_list = ['- - Choose-Category - -'];
 List<int> catid_list = [];
 List chatList = [];
 
-var selectedValue = "CSE";
+var selectedValue = 'CSE';
 var selectedcategory = '- - Choose-Category - -';
 var cat_id;
 
-var ip = "103.207.1.94";
-var port = "8080";
 var box = GetStorage();
-bool versioncheck = false;
 // ignore: non_constant_identifier_names
 bool Loginsucess = false;
-var version = "1.0";
+bool versioncheck = true;
+// ignore: non_constant_identifier_names
+var version = '1.0';
 
 DateTime selectedDate = DateTime.now();
 TimeOfDay selectedTime = TimeOfDay.now();
 
-String initial_Date = DateFormat('dd-MM-yyyy').format(selectedDate);
-String formattedDate = DateFormat('dd-MM-yyyy').format(selectedDate);
+String initial_Date = DateFormat('dd-MM-yyyy').format(DateTime.now());
+String formattedDate = DateFormat('dd-MM-yyyy').format(DateTime.now());
 
 String initial_Time = DateFormat('h:mm a')
-    .format(DateTime(2022, 03, 01, selectedTime.hour, selectedTime.minute));
+    .format(DateTime(2022, 03, 01, TimeOfDay.now().hour, TimeOfDay.now().minute));
 String formattedTime = DateFormat('h:mm a')
-    .format(DateTime(2022, 03, 01, selectedTime.hour, selectedTime.minute));
+    .format(DateTime(2022, 03, 01, TimeOfDay.now().hour, TimeOfDay.now().minute));
 final focus = FocusNode();
 
 const kSendButtonTextStyle = TextStyle(
@@ -63,27 +63,4 @@ const kMessageTextFieldDecoration = InputDecoration(
   border: InputBorder.none,
 );
 
-const kMessageContainerDecoration = BoxDecoration(
-    // border: Border(
-    //   top: BorderSide(color: Colors.lightBlueAccent, width: 2.0),
-    // ),
-
-    );
-
-String unicodeToText(String text) {
-  List<int> codeUnits = List<int>.from(
-      "\u0076\u0061\u0073\u0075\u0020\ud83d\ude00\ud83d\ude00\ud83d\ude00"
-          .codeUnits);
-  print(utf8.decode(codeUnits));
-
-  return utf8.decode(codeUnits);
-}
-
-String textToUnicode(String textString) {
-  String unicodeString = "";
-  for (int i = 0; i < textString.length; i++) {
-    unicodeString +=
-        "\\u" + textString.codeUnitAt(i).toRadixString(16).padLeft(4, '0');
-  }
-  return unicodeString;
-}
+const kMessageContainerDecoration = BoxDecoration();
